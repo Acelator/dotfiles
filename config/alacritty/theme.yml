@@ -1,0 +1,63 @@
+# Argonaut
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x292C3E'
+#     foreground: '0xEBEBEB'
+
+#   # Cursor colors
+#   cursor:
+#     text: '0xFF261E'
+#     cursor: '0xFF261E'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x0d0d0d'
+#     red:     '0xFF301B'
+#     green:   '0xA0E521'
+#     yellow:  '0xFFC620'
+#     blue:    '0x1BA6FA'
+#     magenta: '0x8763B8'
+#     cyan:    '0x21DEEF'
+#     white:   '0xEBEBEB'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x6D7070'
+#     red:     '0xFF4352'
+#     green:   '0xB8E466'
+#     yellow:  '0xFFD750'
+#     blue:    '0x1BA6FA'
+#     magenta: '0xA578EA'
+#     cyan:    '0x73FBF1'
+#     white:   '0xFEFEF8'
+
+
+# Colors (Nord)
+colors:
+  # Default colors
+  primary:
+    background: '0x2E3440'
+    foreground: '0xD8DEE9'
+
+  # Normal colors
+  normal:
+    black:   '0x3B4252'
+    red:     '0xBF616A'
+    green:   '0xA3BE8C'
+    yellow:  '0xEBCB8B'
+    blue:    '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan:    '0x88C0D0'
+    white:   '0xE5E9F0'
+
+  # Bright colors
+  bright:
+    black:   '0x4C566A'
+    red:     '0xBF616A'
+    green:   '0xA3BE8C'
+    yellow:  '0xEBCB8B'
+    blue:    '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan:    '0x8FBCBB'
+    white:   '0xECEFF4'
