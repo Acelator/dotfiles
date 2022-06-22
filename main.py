@@ -30,7 +30,7 @@ print('Starting....')
 # Install package
 print('Installing packages....')
 try:
-    os.system('sudo -S pacman -S alacritty ranger xmonad xmobar xmonad-contrib zsh feh xScreenSaver')
+    os.system('sudo -S pacman -S alacritty ranger xmonad xmobar xmonad-contrib dmenu zsh feh xScreenSaver')
 except:
     print('Errorr')
 
