@@ -57,8 +57,15 @@ os.system('cp -r config/xmobar/ ~/.config/xmobar')
 os.system('cp -r config/xmonad/ ~/.')
 os.system('cp config/.xinitrc ~/.xinitrc')
 
+# Configure zsh
 os.system('cp config/zsh/.zshrc ~/.zshrc')
 os.system('cp -r config/zsh/.oh-my-zsh/themes/ ~/.oh-my-zsh/custom/')
+
+# zsh plugins (maybey install themes directly from github)
+os.system('git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions')
+os.system('git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/k')
+
+
 
 # Copy fonts
 print('Setting up fonts')
