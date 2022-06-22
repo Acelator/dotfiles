@@ -34,6 +34,11 @@ try:
 except:
     print('Errorr')
 
+try:
+    os.system('paru -S picom-jonaburg-git')
+except:
+    print('Error installing picom through paru')
+
 
 # Setting up zsh
 print('Installing oh-my-zsh')
@@ -64,7 +69,6 @@ os.system('cp -r config/zsh/.oh-my-zsh/themes/ ~/.oh-my-zsh/custom/')
 # zsh plugins (maybey install themes directly from github)
 os.system('git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions')
 os.system('git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/k')
-
 
 
 # Copy fonts
