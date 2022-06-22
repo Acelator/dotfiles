@@ -24,12 +24,11 @@ if START is False:
     sys.exit()
 print('Starting....')
 
-# TODO: Install x-org related utilities?
-
 # Install package
 print('Installing packages....')
 try:
-    os.system('sudo -S pacman -S alacritty ranger xmonad xmobar xmonad-contrib dmenu zsh feh xScreenSaver')
+    os.system('sudo -S pacman -S sudo pacman -S --needed git xorg-server xorg-apps xorg-xinit xorg-xmessage libx11 libxft libxinerama libxrandr libxss pkgconf')
+    os.system('sudo -S pacman -S alacritty ranger xmonad xmobar xmonad-contrib dmenu zsh feh xscreensaver --needed')
 except:
     print('Errorr')
 
@@ -40,6 +39,8 @@ except:
 
 # Setting up zsh
 print('Installing oh-my-zsh')
+print('Exit the zsh terminal once oh-my-zsh is intalled to continue the scripts')
+
 os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
 SET_AS_DEFAULT_SHELL = ask_for_confirmation('Should zsh be set up as the default shell? (y or n): ')
 if SET_AS_DEFAULT_SHELL is True:
@@ -79,7 +80,7 @@ os.system('curl https://i.imgur.com/zYq9vdC.jpeg > 1a.jpeg')
 if os.path.isdir(os.path.expanduser('~') + '/Pictures') is False:
     os.system('mkdir ~/Pictures')
 
-if os.path.isdir(os.path.expanduser('~') + '/Pictures') is False:
-    os.system('mkdir ~/Pictures')
+if os.path.isdir(os.path.expanduser('~') + '/Pictures/wallpapers') is False:
+    os.system('mkdir ~/Pictures/wallpapers')
 
 os.system('mv 1a.jpeg ~/Pictures/wallpapers/1a.jpeg')
