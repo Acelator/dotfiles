@@ -18,14 +18,13 @@ print('This program will replace config files of the apps listed with the settin
 print('It is recommended to perform a backup before proceeding')
 print('Right now only pacman is only supported as package manager')
 
-
 START = ask_for_confirmation('Start? (y or n): ')
 if START is False:
     print('Aborting')
     sys.exit()
 print('Starting....')
 
-#TODO: Install x-org related utilities?
+# TODO: Install x-org related utilities?
 
 # Install package
 print('Installing packages....')
@@ -39,7 +38,6 @@ try:
 except:
     print('Error installing picom through paru')
 
-
 # Setting up zsh
 print('Installing oh-my-zsh')
 os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
@@ -47,12 +45,11 @@ SET_AS_DEFAULT_SHELL = ask_for_confirmation('Should zsh be set up as the default
 if SET_AS_DEFAULT_SHELL is True:
     os.system('chsh -s $(which zsh)')
 
-
 # Copy config files
 print('Copying config files')
 
 # Check if ~/.config exists, if it doesn't create it
-if os.path.isdir(os.path.expanduser('~') + '/.config') is False :
+if os.path.isdir(os.path.expanduser('~') + '/.config') is False:
     os.system('mkdir ~/.config')
 
 os.system('cp -r config/alacritty/ ~/.config/alacritty')
@@ -66,11 +63,23 @@ os.system('cp config/.xinitrc ~/.xinitrc')
 os.system('cp config/zsh/.zshrc ~/.zshrc')
 os.system('cp -r config/zsh/.oh-my-zsh/themes/ ~/.oh-my-zsh/custom/')
 
-# zsh plugins (maybey install themes directly from github)
-os.system('git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions')
+# zsh plugins (maybe install themes directly from GitHub)
+os.system(
+    'git clone https://github.com/zsh-users/zsh-autosuggestions ${'
+    'ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions')
 os.system('git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/k')
-
 
 # Copy fonts
 print('Setting up fonts')
 os.system('cp -r fonts/ ~/.fonts/')
+
+# Set up Background
+os.system('curl https://i.imgur.com/zYq9vdC.jpeg > 1a.jpeg')
+
+if os.path.isdir(os.path.expanduser('~') + '/Pictures') is False:
+    os.system('mkdir ~/Pictures')
+
+if os.path.isdir(os.path.expanduser('~') + '/Pictures') is False:
+    os.system('mkdir ~/Pictures')
+
+os.system('mv 1a.jpeg ~/Pictures/wallpapers/1a.jpeg')
