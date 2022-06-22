@@ -6,7 +6,7 @@ if sys.platform != 'linux':
     sys.exit()
 
 
-def askForConfirmation(text):
+def ask_for_confirmation(text):
     confirmation = str(input(text))
     if confirmation == 'y':
         return True
@@ -19,8 +19,8 @@ print('It is recommended to perform a backup before proceeding')
 print('Right now only pacman is only supported as package manager')
 
 
-start = askForConfirmation('Start? (y or n): ')
-if start is False:
+START = ask_for_confirmation('Start? (y or n): ')
+if START is False:
     print('Aborting')
     sys.exit()
 print('Starting....')
@@ -38,8 +38,8 @@ except:
 # Setting up zsh
 print('Installing oh-my-zsh')
 os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
-setAsdefaultShell = askForConfirmation('Should zsh be set up as the default shell? (y or n): ')
-if setAsdefaultShell == True:
+SET_AS_DEFAULT_SHELL = ask_for_confirmation('Should zsh be set up as the default shell? (y or n): ')
+if SET_AS_DEFAULT_SHELL is True:
     os.system('chsh -s $(which zsh)')
 
 
@@ -58,7 +58,7 @@ os.system('cp -r config/xmonad/ ~/.')
 os.system('cp config/.xinitrc ~/.xinitrc')
 
 os.system('cp config/zsh/.zshrc ~/.zshrc')
-os.system('cp -r config/zsh/.oh-my-zsh/themes ~/.oh-my-zsh/custom')
+os.system('cp -r config/zsh/.oh-my-zsh/themes/ ~/.oh-my-zsh/custom/')
 
 # Copy fonts
 print('Setting up fonts')
