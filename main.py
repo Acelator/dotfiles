@@ -27,7 +27,7 @@ print('Starting....')
 # Install package
 print('Installing packages....')
 try:
-    os.system('sudo -S pacman -S sudo pacman -S --needed git xorg-server xorg-apps xorg-xinit xorg-xmessage libx11 libxft libxinerama libxrandr libxss pkgconf')
+    os.system('sudo -S pacman -S --needed git xorg-server xorg-apps xorg-xinit xorg-xmessage libx11 libxft libxinerama libxrandr libxss pkgconf')
     os.system('sudo -S pacman -S alacritty ranger xmonad xmobar xmonad-contrib dmenu zsh feh xscreensaver --needed')
 except:
     print('Errorr')
@@ -42,9 +42,6 @@ print('Installing oh-my-zsh')
 print('Exit the zsh terminal once oh-my-zsh is intalled to continue the scripts')
 
 os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
-SET_AS_DEFAULT_SHELL = ask_for_confirmation('Should zsh be set up as the default shell? (y or n): ')
-if SET_AS_DEFAULT_SHELL is True:
-    os.system('chsh -s $(which zsh)')
 
 # Copy config files
 print('Copying config files')
@@ -57,7 +54,7 @@ os.system('cp -r config/alacritty/ ~/.config/alacritty')
 os.system('cp -r config/picom/ ~/.config/picom')
 os.system('cp -r config/ranger/ ~/.config/ranger')
 os.system('cp -r config/xmobar/ ~/.config/xmobar')
-os.system('cp -r config/xmonad/ ~/.')
+os.system('cp -r config/.xmonad/ ~/.')
 os.system('cp config/.xinitrc ~/.xinitrc')
 
 # Configure zsh
